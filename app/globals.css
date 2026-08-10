@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+:root {
+  --black: #08121f;
+  --black-elevated: #112038;
+  --card: #ffffff;
+  --card-inner: #f8f4ee;
+  --gold: #e28a25;
+  --gold-light: #f8a94d;
+  --gold-dark: #ba5a09;
+  --champagne: #fffaf3;
+  --cream: #ffffff;
+  --muted: #6e7a91;
+  --leaf: #35b19a;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1da851;
+  --blue: #1f4d7f;
+  --blue-soft: #dfefff;
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-black-elevated: var(--black-elevated);
+  --color-card: var(--card);
+  --color-card-inner: var(--card-inner);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-champagne: var(--champagne);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-cream-muted: var(--muted);
+  --color-leaf: var(--leaf);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-dark: var(--whatsapp-dark);
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-dm-sans);
+  --font-hindi: var(--font-noto-sans-devanagari);
+  --shadow-card: 0 10px 32px rgba(20, 44, 78, 0.12);
+  --shadow-card-hover: 0 18px 48px rgba(226, 138, 37, 0.18);
+}
+
+html {
+  background-color: #f7f2ea;
+  overflow-x: hidden;
+}
+
+body {
+  color: #1d2430;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(226, 138, 37, 0.18), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(35, 108, 192, 0.12), transparent 25%),
+    linear-gradient(180deg, #faf7f1 0%, #f6f2ea 45%, #f4efe7 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-hindi {
+  font-family: var(--font-noto-sans-devanagari), sans-serif;
+}
+
+.card-premium {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 244, 238, 0.98));
+  border: 1px solid rgba(20, 44, 78, 0.08);
+  box-shadow: 0 14px 42px rgba(8, 18, 31, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.card-premium:hover {
+  border-color: rgba(226, 138, 37, 0.45);
+  box-shadow: 0 20px 52px rgba(23, 44, 86, 0.14), 0 0 0 1px rgba(226, 138, 37, 0.1);
+  transform: translateY(-2px);
+}
+
+.section-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #f9f6f0 100%);
+  border-top: 1px solid rgba(18, 28, 50, 0.07);
+  border-bottom: 1px solid rgba(18, 28, 50, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(226, 138, 37, 0.8) 50%,
+    transparent
+  );
+}
+
+::selection {
+  background: rgba(226, 138, 37, 0.3);
+  color: #111827;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse 90% 70% at 80% 0%, rgba(226, 138, 37, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(29, 78, 137, 0.12), transparent 50%),
+    linear-gradient(180deg, rgba(251, 246, 238, 0.85) 0%, rgba(246, 242, 234, 0.98) 100%);
+}
+
+.hero-logo-glow {
+  background: radial-gradient(
+    circle,
+    rgba(226, 138, 37, 0.35) 0%,
+    rgba(35, 108, 192, 0.18) 45%,
+    transparent 70%
+  );
+  box-shadow: 0 0 80px rgba(20, 44, 78, 0.1);
+}
+
+@keyframes hero-banner-in {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-banner-motion {
+  animation: hero-banner-in 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-copy-motion {
+  animation: hero-copy-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner-motion,
+  .hero-copy-motion {
+    animation: none;
+  }
+}
+
+.why-choose-featured {
+  background: linear-gradient(180deg, #fbf7f0 0%, #f7f2e8 100%);
+  border-top: 1px solid rgba(18, 28, 50, 0.08);
+  border-bottom: 1px solid rgba(18, 28, 50, 0.08);
+}
+
+.stats-featured {
+  background: linear-gradient(180deg, #ffffff 0%, #f9f6f0 100%);
+  border-top: 1px solid rgba(18, 28, 50, 0.08);
+  border-bottom: 1px solid rgba(18, 28, 50, 0.08);
+}
