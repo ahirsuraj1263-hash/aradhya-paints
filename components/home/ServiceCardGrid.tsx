@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SERVICES } from "@/lib/products";
 
 const featuredServices = SERVICES.slice(0, 6);
@@ -33,12 +32,9 @@ export function ServiceCardGrid() {
                 <h3 className="text-xl font-semibold text-slate-900">{service.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{service.shortDescription}</p>
                 <div className="mt-6 flex items-center justify-between gap-4">
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 transition hover:text-orange-500"
-                  >
+                  <span className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600 transition hover:text-orange-500">
                     Learn More →
-                  </Link>
+                  </span>
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-50 text-orange-600">
                     {index + 1}
                   </span>
