@@ -200,26 +200,97 @@ export default function HomePage() {
 
       <ServiceCardGrid />
 
-      <section className="py-20 bg-slate-50">
+      <section id="why-choose" className="py-20 bg-slate-50" aria-labelledby="why-choose-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-600">Why Choose Us</p>
-              <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">
-                The advantage of working with a dedicated construction partner
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            {/* Left column: label, heading, description, image (CTA removed) */}
+            <div className="flex flex-col h-full space-y-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-600">WHY CHOOSE US</p>
+              <h2 id="why-choose-heading" className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#10233c]">
+                Premium Painting. Lasting Results.
               </h2>
-              <p className="mt-6 text-base leading-8 text-slate-600">
-                We combine planning, execution, and communication so every project stays on schedule, looks refined, and delivers long-term value.
+              <p className="mt-2 text-base leading-7 text-[#10233c] max-w-xl">
+                From surface preparation to final finish, Aradhya Paints delivers professional painting services using premium materials, meticulous workmanship, and transparent pricing so your space looks beautiful for years.
               </p>
+
+              <div className="mt-3 rounded-[20px] overflow-hidden border border-slate-200 h-64 sm:h-80 lg:h-72">
+                <Image
+                  src="/why-choose-us.jpeg"
+                  alt="Aradhya Paints project"
+                  width={1200}
+                  height={700}
+                  className="w-full h-full object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {WHY_CHOOSE.map((item) => (
-                <div key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-6">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-orange-600">{item.title}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.desc}</p>
+            {/* Right column: 2x2 feature cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr h-full">
+              {/* Card 1: Premium Materials */}
+              <div className="group rounded-[16px] border border-[#e9eef6] bg-white p-6 transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(15,23,42,0.10)] h-full flex">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-orange-50 text-orange-600 p-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-orange-100 group-hover:text-orange-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5C3 6.119 4.119 5 5.5 5h13c1.381 0 2.5 1.119 2.5 2.5v5C21 13.881 19.881 15 18.5 15H5.5C4.119 15 3 13.881 3 12.5v-5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 15v3a2 2 0 002 2h6a2 2 0 002-2v-3" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold uppercase text-orange-600 transition-colors duration-300 group-hover:text-orange-700">Premium Materials</h3>
+                    <div className="h-0.5 w-8 bg-orange-500 my-2 rounded transition-colors duration-300 group-hover:bg-orange-600" />
+                    <p className="text-[#10233c] text-sm leading-6">We use top-grade paints and primers for long-lasting colour and protection that withstands daily wear.</p>
+                  </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Card 2: Experienced Craftsmanship */}
+              <div className="group rounded-[16px] border border-[#e9eef6] bg-white p-6 transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(15,23,42,0.10)] h-full flex">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-orange-50 text-orange-600 p-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-orange-100 group-hover:text-orange-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v6m0 0l3-3m-3 3-3-3M5.5 9.5A7.5 7.5 0 0112 5.25 7.5 7.5 0 0118.5 9.5c0 4.142-3.358 7.5-7.5 7.5S5.5 13.642 5.5 9.5z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold uppercase text-orange-600 transition-colors duration-300 group-hover:text-orange-700">Experienced Craftsmanship</h3>
+                    <div className="h-0.5 w-8 bg-orange-500 my-2 rounded transition-colors duration-300 group-hover:bg-orange-600" />
+                    <p className="text-[#10233c] text-sm leading-6">Skilled painters deliver meticulous surface prep and flawless application for a showroom-quality finish.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: On-Time Execution */}
+              <div className="group rounded-[16px] border border-[#e9eef6] bg-white p-6 transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(15,23,42,0.10)] h-full flex">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-orange-50 text-orange-600 p-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-orange-100 group-hover:text-orange-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold uppercase text-orange-600 transition-colors duration-300 group-hover:text-orange-700">On-Time Execution</h3>
+                    <div className="h-0.5 w-8 bg-orange-500 my-2 rounded transition-colors duration-300 group-hover:bg-orange-600" />
+                    <p className="text-[#10233c] text-sm leading-6">Planned schedules, reliable teams, and clear coordination — projects completed when promised.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4: Transparent Pricing */}
+              <div className="group rounded-[16px] border border-[#e9eef6] bg-white p-6 transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(15,23,42,0.10)] h-full flex">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-orange-50 text-orange-600 p-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-orange-100 group-hover:text-orange-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6M7 10V6a5 5 0 0110 0v4M7 10h10" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold uppercase text-orange-600 transition-colors duration-300 group-hover:text-orange-700">Transparent Pricing</h3>
+                    <div className="h-0.5 w-8 bg-orange-500 my-2 rounded transition-colors duration-300 group-hover:bg-orange-600" />
+                    <p className="text-[#10233c] text-sm leading-6">Clear, itemised estimates and no hidden charges so you can plan with confidence.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
