@@ -15,8 +15,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-slate-950/75" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid min-h-[60vh] items-center lg:grid-cols-2">
+      <div className="relative mx-auto max-w-7xl px-4 py-[calc(2rem+20px)] sm:px-6 lg:px-8 lg:py-[calc(3rem+20px)]">
+        <div className="grid min-h-[36vh] items-center lg:grid-cols-2">
           <div className="max-w-3xl space-y-8 text-white">
             <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-orange-200">
               <span className="h-2 w-2 rounded-full bg-orange-400" />
@@ -27,12 +27,12 @@ export function Hero() {
               <p className="text-sm uppercase tracking-[0.28em] text-orange-300">
                 Construction & renovation solutions
               </p>
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[4rem] leading-[1.05]">
+              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
                 Strong foundations for modern construction projects.
               </h1>
             </div>
 
-            <p className="max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">
+            <p className="max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
               We deliver premium building, renovation and finishing services with expert planning, dependable execution, and a polished final result.
             </p>
 
