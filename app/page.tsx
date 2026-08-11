@@ -17,29 +17,30 @@ const PROJECTS = [
     title: "Home Renovation",
     subtitle: "Residential construction",
     image: "/Home-Renovation.avif",
+    category: "Residential",
+    color: "bg-gradient-to-r from-orange-400 to-orange-600",
   },
   {
     title: "Commercial Tower",
     subtitle: "Office development",
     image: "/Commercial-Tower.jpg",
+    category: "Commercial",
+    color: "bg-gradient-to-r from-teal-400 to-teal-600",
   },
   {
     title: "Office Complex",
     subtitle: "Corporate workspace",
     image: "/Office-Complex.avif",
+    category: "Corporate",
+    color: "bg-gradient-to-r from-indigo-400 to-indigo-600",
   },
   {
     title: "Industrial Site",
     subtitle: "Heavy engineering",
     image: "/Industrial-Site.png",
+    category: "Industrial",
+    color: "bg-gradient-to-r from-emerald-400 to-emerald-600",
   },
-] as const;
-
-const TEAM = [
-  { name: "Adam Smith", role: "Project Manager" },
-  { name: "Andrew Devito", role: "Site Engineer" },
-  { name: "Alisha Martin", role: "Design Lead" },
-  { name: "Boris Green", role: "Quality Supervisor" },
 ] as const;
 
 
@@ -131,38 +132,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="projects" className="py-20 bg-slate-50">
+      <section id="projects" className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
               Our Projects
             </p>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">
+            <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
               Completed Construction Projects
             </h2>
+            <div className="mt-3 h-2 w-36 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" />
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
             {PROJECTS.map((project) => (
-              <article key={project.title} className="group overflow-hidden rounded-[28px] bg-white shadow-[0_18px_55px_rgba(15,23,42,0.08)]">
-                <div className="relative h-72 overflow-hidden">
+              <article key={project.title} className="group relative overflow-hidden rounded-[32px] bg-white border border-slate-200 shadow-sm transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transform transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 1024px) 50vw, 25vw"
                   />
+
+                  {/* gradient overlay at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" />
+
+                  {/* category badge on image */}
+                  <div className="absolute left-3 bottom-3 z-10">
+                    <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-white ${project.color}`}>
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
+
                 <div className="p-6">
-                  <p className="text-sm uppercase tracking-[0.24em] text-orange-600">
-                    {project.subtitle}
-                  </p>
-                  <h3 className="mt-4 text-xl font-semibold text-slate-900">{project.title}</h3>
+                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">{project.subtitle}</p>
+                  <h3 className="mt-3 text-xl font-semibold text-slate-900">{project.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">Delivering premium construction work with precision, safety, and modern design standards.</p>
-                  <Button href="#contact" variant="ghost" size="sm" className="mt-6 px-4 py-2">
-                    View Details
-                  </Button>
+
+                  <div className="mt-6">
+                    <Button href="#contact" variant="ghost" size="sm" className="inline-flex items-center gap-2 rounded-md bg-white/0 border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 transition-transform duration-200 group-hover:translate-x-1">
+                      View Details
+                      <svg className="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586L10.293 5.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </Button>
+                  </div>
                 </div>
               </article>
             ))}
@@ -224,28 +241,6 @@ export default function HomePage() {
           </div>
           <div className="mt-10">
             <TestimonialsSlider />
-          </div>
-        </div>
-      </section>
-
-      <section id="team" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-600">Our Team</p>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">
-              Meet Our Expert Team
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {TEAM.map((member) => (
-              <div key={member.name} className="rounded-[28px] border border-slate-200 bg-white p-6 text-center shadow-[0_18px_40px_rgba(15,23,42,0.06)]">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-3xl font-semibold text-orange-700">
-                  {member.name.split(" ").map((word) => word[0]).join("")}
-                </div>
-                <h3 className="mt-6 text-xl font-semibold text-slate-900">{member.name}</h3>
-                <p className="mt-2 text-sm text-slate-600">{member.role}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
