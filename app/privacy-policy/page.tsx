@@ -48,9 +48,10 @@ export default function PrivacyPolicyPage() {
                 WhatsApp messaging.
               </li>
               <li>
-                <strong className="text-[#10233c]">Cart data:</strong> Product
-                selections are stored locally in your browser (localStorage) and
-                are not transmitted to our servers.
+                <strong className="text-[#10233c]">Service request data:</strong>{" "}
+                When you contact us for a consultation or quote, your name, phone
+                number, and project details may be shared through WhatsApp or
+                email.
               </li>
               <li>
                 <strong className="text-[#10233c]">Analytics:</strong> We may use
@@ -101,9 +102,10 @@ export default function PrivacyPolicyPage() {
               6. Cookies
             </h2>
             <p>
-              Our website may use essential cookies for basic functionality. Cart
-              data is stored in your browser&apos;s localStorage. You can clear
-              this data at any time through your browser settings.
+              Our website may use essential cookies for basic functionality.
+              Any browsing preferences you choose are stored locally in your
+              browser and can be cleared at any time through your browser
+              settings.
             </p>
           </section>
 

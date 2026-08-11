@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BRAND } from "@/lib/constants";
 import { SERVICES, formatPrice, getServiceBySlug } from "@/lib/products";
-import { AddToCartButton } from "@/components/service/AddToCartButton";
+import { Button } from "@/components/ui/Button";
 import { ProductImageGallery } from "@/components/service/ProductImageGallery";
 
 interface ServicePageProps {
@@ -76,7 +76,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {service.description}
             </p>
 
-            <AddToCartButton product={service} />
+            <Button href="#contact" variant="primary" size="md" className="w-full sm:w-auto">
+              Request a Quote
+            </Button>
 
             <div className="pt-6 border-t border-gold/10 space-y-6">
               <div>

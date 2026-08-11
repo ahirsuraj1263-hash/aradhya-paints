@@ -66,14 +66,14 @@ export default function TermsPage() {
               ). The process is as follows:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
-              <li>Browse products on our website and add items to your cart.</li>
+              <li>Browse services on our website and request a consultation.</li>
               <li>
-                Click &quot;Send Order on WhatsApp&quot; to open WhatsApp with a
-                pre-filled order summary.
+                Contact us via WhatsApp or email to discuss your project
+                requirements.
               </li>
               <li>
-                Provide your name, delivery address, and pincode in the
-                WhatsApp conversation.
+                Provide your name, site address, and project details in the
+                WhatsApp or email conversation.
               </li>
               <li>
                 We will confirm availability, total amount, and delivery timeline

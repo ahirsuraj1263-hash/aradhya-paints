@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FAQ, WHY_CHOOSE, ABOUT_EXTRA } from "@/lib/content";
+import { FAQ, WHY_CHOOSE } from "@/lib/content";
 import { Hero } from "@/components/home/Hero";
 import { ServiceCardGrid } from "@/components/home/ServiceCardGrid";
 import { TestimonialsSlider } from "@/components/home/TestimonialsSlider";
@@ -70,38 +70,62 @@ export default function HomePage() {
 
       <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_0.95fr] lg:items-center">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-600">
-                About Our Company
-              </p>
-              <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">
-                Building Strong Foundations for a Better Future
-              </h2>
-              <p className="mt-6 text-base leading-8 text-slate-600">
-                We are a professional construction company delivering high-quality residential and commercial projects. With years of experience, skilled professionals, and on-time construction solutions.
-              </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Clients</p>
-                  <p className="mt-3 text-3xl font-semibold text-slate-900">4.8k</p>
-                  <p className="mt-2 text-sm text-slate-600">Reviews from happy customers</p>
-                </div>
-                <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Experience</p>
-                  <p className="mt-3 text-3xl font-semibold text-slate-900">35<span className="text-base">+ years</span></p>
-                  <p className="mt-2 text-sm text-slate-600">Trusted workmanship across every project</p>
-                </div>
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="relative mx-auto w-full max-w-[500px]">
+              <div className="absolute left-4 top-5 h-24 w-24 rounded-full border-[10px] border-pink-200" />
+              <div className="absolute right-4 top-8 h-12 w-12 rounded-full border-[8px] border-blue-200" />
+              <div className="absolute left-6 bottom-10 h-10 w-10 rounded-full border-[8px] border-green-200" />
+              <div className="absolute bottom-6 right-8 h-8 w-8 rounded-full border-[8px] border-teal-200" />
+              <div className="absolute inset-x-8 bottom-5 h-[76%] rounded-[36px] bg-[#f7b83a] blur-3xl opacity-40" />
+              <div className="relative overflow-hidden rounded-[36px] border border-slate-200 bg-[#fffaf2] p-4 shadow-[0_30px_70px_rgba(15,23,42,0.08)] sm:p-6">
+                <Image
+                  src="/about-professional.svg"
+                  alt="Painting professional wearing a yellow hard hat and grey apron"
+                  width={640}
+                  height={760}
+                  className="w-full h-auto object-contain"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
               </div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              {ABOUT_EXTRA.process.map((item) => (
-                <div key={item.title} className="rounded-[32px] border border-slate-200 bg-slate-50 p-6">
-                  <p className="text-sm font-semibold text-orange-600">{item.title}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.desc}</p>
-                </div>
-              ))}
+            <div className="max-w-2xl">
+              <p className="inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-orange-600">
+                About Us
+              </p>
+              <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-tight">
+                We Are The Best <span className="text-orange-600">Painting</span> Company
+              </h2>
+              <p className="mt-6 text-base leading-8 text-slate-600">
+                From flawless finishes to dependable project delivery, we combine craftsmanship, safety, and attention to detail to create spaces that feel polished and lasting.
+              </p>
+
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 1 1 1.4-1.4l2.9 2.9 6.5-6.5a1 1 0 0 1 1.4 0Z" />
+                    </svg>
+                  </span>
+                  <span className="text-base font-medium text-slate-700">Skilled professionals with proven experience in premium painting and finishing.</span>
+                </li>
+                <li className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 1 1 1.4-1.4l2.9 2.9 6.5-6.5a1 1 0 0 1 1.4 0Z" />
+                    </svg>
+                  </span>
+                  <span className="text-base font-medium text-slate-700">Transparent planning, clean execution, and timely project support.</span>
+                </li>
+                <li className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.2 7.2a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 1 1 1.4-1.4l2.9 2.9 6.5-6.5a1 1 0 0 1 1.4 0Z" />
+                    </svg>
+                  </span>
+                  <span className="text-base font-medium text-slate-700">Premium materials and finish quality crafted for every space.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

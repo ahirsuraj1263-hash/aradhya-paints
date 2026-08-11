@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Service } from "@/lib/products";
 import { formatPrice } from "@/lib/products";
-import { ProductAddButton } from "./ProductAddButton";
 
 interface ProductCardProps {
   product: Service;
@@ -52,7 +51,12 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
             <p className="text-xs text-[#9fb4d3] mt-0.5">Starting estimate</p>
           </div>
-          <ProductAddButton product={product} compact />
+          <Link
+            href={`/services/${product.slug}`}
+            className="w-full sm:w-auto shrink-0 min-h-11 px-6 py-2.5 text-sm font-semibold bg-gold text-black rounded-full hover:bg-gold-light transition-colors text-center"
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </article>

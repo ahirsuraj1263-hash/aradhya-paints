@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
-import { CartButton } from "@/components/cart/CartButton";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -69,7 +68,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <CartButton />
           <Link
             href="#contact"
             className="hidden rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-400 lg:inline-flex"

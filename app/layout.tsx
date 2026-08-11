@@ -3,8 +3,6 @@ import { Cormorant_Garamond, DM_Sans, Noto_Sans_Devanagari } from "next/font/goo
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
-import { CartProvider } from "@/components/cart/CartProvider";
-import { CartDrawer } from "@/components/cart/CartDrawer";
 import { BRAND } from "@/lib/constants";
 import "./globals.css";
 
@@ -67,13 +65,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col antialiased"
         suppressHydrationWarning
       >
-        <CartProvider>
-          <Header />
-          <main className="flex-1 pb-20 sm:pb-0">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <WhatsAppFab />
-        </CartProvider>
+        <Header />
+        <main className="flex-1 pb-20 sm:pb-0">{children}</main>
+        <Footer />
+        <WhatsAppFab />
       </body>
     </html>
   );
