@@ -1,32 +1,30 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { TestimonialCard } from "@/components/home/TestimonialCard";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export function TestimonialsSlider() {
   return (
     <div className="mt-10">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Pagination, Autoplay]}
         slidesPerView={1}
         spaceBetween={24}
-        centeredSlides
         grabCursor
-        navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        autoplay={{ delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: false }}
+        speed={1200}
         loop
         breakpoints={{
           640: { slidesPerView: 1.05 },
           768: { slidesPerView: 1.25 },
-          1024: { slidesPerView: 1.7 },
-          1280: { slidesPerView: 2.3 },
+          1024: { slidesPerView: 2 },
+          1280: { slidesPerView: 2 },
         }}
         className="py-5"
       >

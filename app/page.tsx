@@ -307,7 +307,7 @@ export default function HomePage() {
             </h2>
             <div className="mt-4 h-px w-24 rounded-full bg-orange-200" />
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
-              Trusted by customers across India for premium painting, waterproofing, and renovation services.
+              Trusted by homeowners and businesses across India for quality painting, waterproofing, and renovation services.
             </p>
           </div>
           <div className="mt-10">
