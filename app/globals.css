@@ -37,7 +37,7 @@
   --color-blue-soft: var(--blue-soft);
   --font-display: var(--font-cormorant);
   --font-sans: var(--font-dm-sans);
-  --font-hindi: var(--font-noto-sans-devanagari);
+  --font-hindi: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shadow-card: 0 10px 32px rgba(20, 44, 78, 0.12);
   --shadow-card-hover: 0 18px 48px rgba(226, 138, 37, 0.18);
 }
@@ -80,7 +80,7 @@ button:disabled {
 }
 
 .font-hindi {
-  font-family: var(--font-noto-sans-devanagari), sans-serif;
+  font-family: var(--font-hindi), sans-serif;
 }
 
 .card-premium {
