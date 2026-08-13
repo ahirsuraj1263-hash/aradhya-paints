@@ -40,7 +40,7 @@ export function Hero() {
               <Button href="#contact" size="lg" className="min-w-[12rem] bg-orange-500 hover:bg-orange-400 text-slate-950">
                 Get A Quote
               </Button>
-              <Button href="#services" variant="secondary" size="lg" className="min-w-[12rem] text-white border-white/20">
+              <Button href="/services" variant="secondary" size="lg" className="min-w-[12rem] text-white border-white/20">
                 View Services
               </Button>
             </div>

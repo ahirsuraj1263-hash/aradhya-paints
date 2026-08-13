@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { BRAND, MISSION } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import EstimateCta from "@/components/ui/EstimateCta";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -307,34 +308,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="min-h-[430px] py-20 bg-[#10233c] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[36px] border border-white/10 bg-slate-950/95 p-10 sm:p-14 shadow-[0_25px_80px_rgba(8,12,31,0.35)]">
-            <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-orange-300">
-                  Ready to transform your space?
-                </p>
-                <h2 className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-                  Let’s build something great together.
-                </h2>
-                <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-slate-300">
-                  Talk to our team about premium painting solutions, thoughtful planning, and a dependable finishing process that leaves your space looking refined.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                <Button href="/#contact" size="lg">
-                  Start your project
-                </Button>
-                <Button href="#trusted" variant="secondary" size="lg" className="w-full sm:w-auto">
-                  Explore trust factors
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EstimateCta
+        eyebrow="Ready to transform your space?"
+        title={"Let’s build something great together."}
+        description={"Talk to our team about premium painting solutions, thoughtful planning, and a dependable finishing process that leaves your space looking refined."}
+        primaryLabel="Start your project"
+        primaryHref="/#contact"
+        secondaryLabel="Explore trust factors"
+        secondaryHref="#trusted"
+      />
     </div>
   );
 }
