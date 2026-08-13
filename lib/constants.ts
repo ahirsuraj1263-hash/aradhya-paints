@@ -17,11 +17,12 @@ export const SOCIAL = {
 } as const;
 
 export const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/#services", label: "Services" },
   { href: "/#projects", label: "Projects" },
-  { href: "/#team", label: "Team" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/#contact", label: "Contact Us" },
 ] as const;
 
 export const MISSION = {
