@@ -43,22 +43,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-white/90 hover:text-[#f6bb7e] text-sm transition-colors inline-block py-1"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms-and-conditions"
-                  className="text-white/90 hover:text-[#f6bb7e] text-sm transition-colors inline-block py-1"
-                >
-                  Terms & Conditions
-                </Link>
-              </li>
             </ul>
           </div>
 
