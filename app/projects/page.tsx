@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Suspense } from "react";
 import PortfolioGridClient from "@/components/projects/PortfolioGridClient";
 
 const PROJECTS = [
@@ -29,7 +29,7 @@ const PROJECTS = [
 
   // Waterproofing (4)
   { id: 'wf1', title: 'Waterproof Terrace Project', category: 'Waterproofing', image: '/Waterproofing.jpg', location: 'Mumbai', short: 'Secure terrace with warranty-grade system.' },
-  { id: 'wf2', title: 'Basement Waterproofing', category: 'Waterproofing', image: '/waterproofing.jpg', location: 'Pune', short: 'Damp-proofing and protective coating.' },
+  { id: 'wf2', title: 'Basement Waterproofing', category: 'Waterproofing', image: '/Waterproofing.jpg', location: 'Pune', short: 'Damp-proofing and protective coating.' },
   { id: 'wf3', title: 'Balcony & Parapet Protection', category: 'Waterproofing', image: '/Exterior-Painting.jpg', location: 'Delhi', short: 'Robust seal and UV resistance.' },
   { id: 'wf4', title: 'Rooftop Membrane Upgrade', category: 'Waterproofing', image: '/why-choose-us.jpeg', location: 'Hyderabad', short: 'High-performance rooftop system.' },
 
@@ -56,7 +56,9 @@ export default function ProjectsPage() {
       </header>
 
       <div className="mt-8">
-        <PortfolioGridClient projects={PROJECTS} />
+        <Suspense fallback={<div className="h-80 rounded-2xl border border-slate-200 bg-slate-100 animate-pulse" />}>
+          <PortfolioGridClient projects={PROJECTS} />
+        </Suspense>
       </div>
     </main>
   );
